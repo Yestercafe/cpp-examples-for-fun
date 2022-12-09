@@ -31,15 +31,15 @@ int BFS(int i, const std::deque<int>& d) {
 
 int main()
 {
-    //std::cout << factorialIter(1, 10, 1) << std::endl;
-    //std::cout << factorial(10) << std::endl;
+    std::cout << factorialIter(1, 10, 1) << std::endl;
+    std::cout << factorial(10) << std::endl;
     std::cout << fact(10) << std::endl;
     
-    //auto ans1 = BFS(0, std::deque<int> {1, 2, 3});
-    //auto ans2 = BFS(0, std::deque<int> {1, 2, 3, 4});
-    //auto BFSSpec = std::bind(BFS, 0, std::placeholders::_1);
-    //auto ans11 = BFSSpec(std::deque<int> {1, 2, 3});
-    //auto ans22 = BFSSpec(std::deque<int> {1, 2, 3, 4});
+    auto ans1 = BFS(0, std::deque<int> {1, 2, 3});
+    auto ans2 = BFS(0, std::deque<int> {1, 2, 3, 4});
+    auto BFSSpec = std::bind(BFS, 0, std::placeholders::_1);
+    auto ans11 = BFSSpec(std::deque<int> {1, 2, 3});
+    auto ans22 = BFSSpec(std::deque<int> {1, 2, 3, 4});
 
     return 0;
 }

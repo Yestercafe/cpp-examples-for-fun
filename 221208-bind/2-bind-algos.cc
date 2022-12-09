@@ -25,8 +25,8 @@ int main()
     std::sort(std::begin(arr), std::end(arr));
     print_arr(arr);
 
-    auto sortDesc = std::bind(std::sort<decltype(std::begin(arr)), std::greater<int>>, 
-            std::placeholders::_1, std::placeholders::_2, std::greater<int>{});
+    auto sortDesc = std::bind(std::sort<decltype(std::begin(arr)), std::greater<std::decay_t<decltype(*std::begin(arr))>>>, 
+            std::placeholders::_1, std::placeholders::_2, std::greater<std::decay_t<decltype(*std::begin(arr))>>{});
     sortDesc(std::begin(arr), std::end(arr));
     print_arr(arr);
 
